@@ -15,7 +15,7 @@ run script:
 
 Script performs:
 
-1. Reorientation of the input image to match the approximate orientation of the standard template images (MNI152)
+1. Reorientation of the input image to match the approximate orientation of the standard template image (MNI152)
 
 2. Brain extraction
 
