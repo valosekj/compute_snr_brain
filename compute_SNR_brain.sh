@@ -36,10 +36,6 @@
 #   - if snr_dir already exists, backup it (currently it is overwritten)
 #   - round output numbers to same number of decimals
 
-
-# Log where computations will be saved
-log_file="snr.txt"
-
 # Initialization function and argument parser
 init()
 {
@@ -100,6 +96,9 @@ main()
 {
       # remove file suffix (.nii.gz is expected)
       file_name=$(basename $1 .nii.gz)
+
+      # Log where computations will be saved
+      log_file="snr_${file_name}.txt"
 
       # create working dirrectory (e.g., snr_t1 or snr_Mprage) where everything will be stored
       snr_dir=snr_${file_name}
