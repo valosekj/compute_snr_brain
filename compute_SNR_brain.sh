@@ -25,9 +25,8 @@
 # 	compute_SNR_brain.sh -i t1.nii.gz
 #
 #
-# Jan Valosek, Pavel Hok; fMRI laboratory Olomouc; 2020
+# Jan Valosek, Pavel Hok; fMRI laboratory Olomouc; 2020-2021
 # Thanks for contribution to Dominik Vilimek from Technical University Ostrava
-# VER=30-10-2020
 
 # REQUIREMENTS:
 #   - FMRIB Software Library (FSL)
@@ -85,7 +84,7 @@ usage()
     echo "four cubic ROIs placed in the superior corners of the input 3D image (mean_noise)."
     echo -e "\nWARNING: scipt overwrittes existing results if they already exist"
     echo -e "\nREQUIREMENTS: FMRIB Software Library (FSL)"
-    echo -e "\nJan Valosek, Pavel Hok; fMRI laboratory Olomouc; 2020"
+    echo -e "\nJan Valosek, Pavel Hok; fMRI laboratory Olomouc; 2020-2021"
     echo -e "Thanks for contribution to Dominik Vilimek from Technical University Ostrava"
     exit
 }
