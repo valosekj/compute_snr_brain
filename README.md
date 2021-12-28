@@ -31,7 +31,7 @@ Script performs:
 
     - SNR = 0.655 * mean_wm / sd_noise 
     
-    (Zhang et al., IEEE Access, 2018, doi: 10.1109/ACCESS.2018.2796632)
+        (Zhang et al., IEEE Access, 2018, doi: [10.1109/ACCESS.2018.2796632](https://ieeexplore.ieee.org/document/8267028))
     
 Computed SNR (saved into `snr.txt` file) as well as all processed images are stored in newly created directory.
 

@@ -1,13 +1,13 @@
 #!/bin/bash
 #
-# Script for computation of SNR from the input 3D image of the brain using two methods:
+# Script computates SNR from the input 3D image of the brain using two methods:
 #
-# 1. Script computes mean signal from WM (mean_wm) and mean noise intensity from
+# 1. Mean signal from WM (mean_wm) and mean signal of noise extracted from
 # four cubic ROIs placed in superior corners of the input 3D image (mean_noise).
 #
 # SNR = mean_wm / mean_noise
 #
-# 2. Script computes mean signal from WM (mean_wm) and SD of noise intensity from
+# 2. Mean signal from WM (mean_wm) and standard deviation (sd) of noise extracted from
 # four cubic ROIs placed in the superior corners of the input 3D image (sd_noise).
 # Moreover factor of 0.655 is used due to the Rician distribution of the background
 # noise in a magnitude MR image:
@@ -137,7 +137,7 @@ main()
       compute_noise_basic ${file_name} ${mean_wm}
 
       # compute SNR = 0.655 * mean_wm / sd_noise
-      compute_noise_advanced ${file_name} ${mean_wm}
+      compute_noise_rician ${file_name} ${mean_wm}
 
       exit
 }
@@ -189,7 +189,7 @@ compute_noise_basic()
 }
 
 # SNR = 0.655 * mean_wm / sd_noise
-compute_noise_advanced()
+compute_noise_rician()
 {
 
       echo -e "\nMethod 2 (SNR = 0.655 * mean_wm / sd_noise):"
@@ -210,4 +210,4 @@ compute_noise_advanced()
       echo "SNR: ${SNR_SD}" | tee -a ${log_file}
 }
 
-init $@
+init "$@"
