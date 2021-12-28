@@ -107,6 +107,10 @@ main()
       cp ${file_name}.nii.gz ${snr_dir}/
       cd ${snr_dir}/
 
+      # print info about the image into ouput txt file
+      echo -e "${file_name}.nii.gz" | tee -a ${log_file}
+      echo -e "$(fslinfo ${file_name}.nii.gz)\n" | tee -a ${log_file}
+
       # reorient image to match the approximate orientation of the standard template images (MNI152)
       fslreorient2std ${file_name}.nii.gz ${file_name}_reorient.nii.gz
 
